@@ -1,0 +1,61 @@
+p {
+  font-weight: 300;
+  color: #111;
+}
+
+.banner {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: url("../../../assets/images/carousel-1.jpg") center;
+  background-size: cover;
+}
+
+.banner .content {
+  max-width: 900px;
+  text-align: center;
+}
+
+.banner .content h2 {
+  font-size: 5em;
+  color: #fff;
+}
+
+.banner .content p {
+  font-size: 2em;
+  color: #fff;
+}
+
+.btn {
+  font-size: 1em;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin-top: 20px;
+  // background-color: #ff0157;
+  background-color: black;
+  border: 1px solid white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+  /*An animation*/
+  transition: 0.5s;
+}
+
+.btn:hover {
+  letter-spacing: 6px;
+}
+
+@media (max-width: 991px) {
+  section {
+    padding: 20px;
+  }
+
+  .banner .content h2 {
+    font-size: 3em;
+    color: #fff;
+  }
+}

@@ -1,0 +1,30 @@
+<section class="banner" id="banner">
+    <div class="content">
+        <h2>NEW ARRIVALS</h2>
+    </div>
+</section>
+<section class="description">
+    <div class="content">
+        <p>Our sizes were custom developed by the Petite Studio design team to ﬁt the petite frame. This size chart will
+            help you pick your size..</p>
+    </div>
+</section>
+<section class="expert" id="expert">
+    <div class="content">
+        <ng-container *ngFor="let item of productList">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{{item.imagePath}}" alt="image">
+                </div>
+                <div class="text">
+                    <h2>{{item.name}}</h2>
+                    <h3>{{item.description}}</h3>
+                    <h3 style="font-weight: bold">$ {{item.price}}</h3>
+                </div>
+
+                <button (click)="addToCart(item)" class="btn">Add to Cart</button>
+                <button class="btn fav">Add Favourite  <i class="fa-regular fa-heart"></i> </button>
+            </div>
+        </ng-container>
+    </div>
+</section>

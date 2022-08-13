@@ -1,0 +1,176 @@
+header {
+  position: fixed;
+  z-index: 100000;
+  width: 100%;
+  background-color: transparent;
+  padding: 40px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+}
+
+header .logo {
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.5em;
+  text-decoration: none;
+  letter-spacing: 8px;
+}
+
+header .navigation {
+  display: flex;
+  position: relative;
+  margin-top: 10px;
+
+}
+
+header .navigation li {
+  list-style: none;
+  margin-left: 30px;
+}
+
+header .navigation li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
+}
+
+header .navigation li a:hover {
+  //color: #ff0157;
+  color: #818181;
+}
+
+header.sticky {
+  background-color: #fff;
+  padding: 20px 100px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+header.sticky .navigation li h5:hover {
+  color: #818181;
+}
+
+header.sticky .navigation li i:hover {
+  color: #818181;
+}
+
+header.sticky .logo {
+  color: black;
+}
+
+header.sticky li i {
+  color: black;
+  //font-weight: bold;
+}
+
+header.sticky li h5 {
+  color: black;
+  //font-weight: bold;
+  font-size: 1em;
+}
+
+.menuToggle {
+  display: none;
+}
+
+
+li span.counter {
+  position: absolute;
+  top: 12px;
+  right: 32px;
+  font-size: 11px;
+  padding: 0 5px;
+  border-radius: 50%;
+  background-color: rgba(169, 169, 169, 0.41)
+
+}
+
+
+
+.menuToggle a .counter{
+  position: absolute;
+  top: 20px;
+  right: -5px;
+  font-size: 15px;
+  padding: 0 5px;
+  border-radius: 50%;
+  background-color: darkgrey
+}
+
+@media (max-width: 991px) {
+  header,
+  header.sticky {
+    padding: 10px 20px;
+  }
+
+  header .navigation {
+    display: none;
+  }
+
+  header .navigation.active {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+  }
+
+  header .navigation li {
+    margin: 10px 10px 10px 0;
+  }
+
+  header .navigation li a {
+    color: #111;
+    font-size: 1.6em;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  .menuToggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 150%;
+
+  }
+
+  .menuToggle i {
+    color: #fff;
+
+  }
+  .menuToggle i.fa-xmark {
+    display: none;
+
+  }
+
+  .menuToggle.active i.fa-xmark {
+    display: flex;
+  }
+
+  .menuToggle.active i.fa-bars {
+    display: none;
+  }
+
+  header.sticky .menuToggle {
+    filter: invert(1);
+  }
+
+  .bag-icon{
+    display: none;
+  }
+
+  li a i.fa-cart-arrow-down {
+    display: none;
+  }
+}

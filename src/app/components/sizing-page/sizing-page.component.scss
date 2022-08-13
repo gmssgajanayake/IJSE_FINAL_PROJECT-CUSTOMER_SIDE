@@ -1,0 +1,88 @@
+p {
+  font-weight: 300;
+  color: #111;
+}
+
+.banner {
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: url("../../../assets/images/carousel-2.jpg") center;
+  background-size: cover;
+}
+
+.banner .content {
+  max-width: 900px;
+  text-align: center;
+}
+
+.banner .content h2 {
+
+  font-size: 4em;
+  color: #fff;
+
+}
+
+
+.btn:hover {
+  letter-spacing: 6px;
+}
+
+.about-sizing {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: url("../../../assets/images/petite_size_chart_image.jpg") center;
+  background-size: cover;
+  padding: 30%;
+}
+
+.description {
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #e7b26c;
+  background-size: cover;
+  padding: 0 25%;
+}
+
+.description .content p {
+  font-size: 1em;
+  color: #fff;
+  text-align: center;
+}
+
+
+.row {
+  // flex-direction: column;
+}
+
+.row .col50 {
+  //position: relative;
+  width: 100%;
+}
+
+.row .col50 .imgBx {
+  //height: 100%;
+  //margin-top: 100%;
+}
+
+@media (max-width: 991px) {
+  section {
+    padding: 20px;
+  }
+
+  .banner .content h2 {
+    font-size: 3em;
+    color: #fff;
+  }
+}

@@ -1,0 +1,134 @@
+p {
+  font-weight: 300;
+  color: #111;
+}
+
+.banner {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: url("../../../assets/images/carousel-1.jpg") center;
+  background-size: cover;
+}
+
+.banner .content {
+  max-width: 900px;
+  text-align: center;
+}
+
+.banner .content h2 {
+  font-size: 4em;
+  color: #fff;
+}
+
+.banner .content p {
+  font-size: 1em;
+  color: #fff;
+}
+
+.btn {
+  font-size: 1em;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin-top: 20px;
+  background-color: black;
+  border: 1px solid white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+  /*An animation*/
+  transition: 0.5s;
+}
+
+.btn:hover {
+  letter-spacing: 6px;
+}
+
+.expert .content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.expert .content .box {
+  width: 320px;
+  margin: 15px;
+}
+
+.expert .content .box .imgBx {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+
+.expert .content .box .box1 {
+  background: url("../../../assets/images/desktop-women-daydress-10-08-2022.jpg") center;
+  background-size: cover;
+}
+
+.expert .content .box .box2 {
+  background: url("../../../assets/images/desktop-women-home-10-08-2022.jpg") center;
+  background-size: cover;
+}
+
+.expert .content .box .box3 {
+  background: url("../../../assets/images/desktop-women-jeans-10-08-2022.jpg") center;
+  background-size: cover;
+}
+
+
+.expert .content .box .text {
+  padding: 15px 10px 15px 30px;
+}
+
+.expert .content .box .text h1 {
+  font-weight: bolder;
+  font-size: 2em;
+  color: white;
+}
+
+.expert .content .box .text p {
+  font-size: 20px;
+  color: white;
+}
+
+
+@media (max-width: 991px) {
+  section {
+    padding: 20px;
+  }
+
+  .banner .content h2 {
+    font-size: 3em;
+    color: #fff;
+  }
+
+  section {
+    padding: 10px;
+  }
+
+  .expert .content .box {
+    width: 100%;
+    margin: 15px;
+  }
+
+  .expert .content {
+    margin-top: 5px;
+  }
+
+  .expert .content .box .imgBx {
+    position: relative;
+    width: 100%;
+    height: 320px;
+  }
+}
