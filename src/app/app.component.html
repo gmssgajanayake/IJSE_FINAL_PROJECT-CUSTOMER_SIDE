@@ -1,17 +1,2 @@
-<header>
-  <div class="menuToggle" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i><i class="fa-solid fa-xmark"></i></div>
-  <a routerLink="customer/home" routerLinkActive="active" class="logo">PRIMESPOT</a>
-  <div class="menuToggle" ><a routerLink="customer/make-payment" routerLinkActive="active"><i
-          class="fa-solid fa-cart-arrow-down"></i></a></div>
-  <ul class="navigation">
-    <li><a routerLink="customer/home" routerLinkActive="active" onclick="toggleMenu()"><h5 style="font-weight: normal">HOME</h5></a></li>
-    <li><a routerLink="customer/new-arrivals" routerLinkActive="active" onclick="toggleMenu()"><h5  style="font-weight: normal">NEW ARRIVALS</h5></a></li>
-    <li><a routerLink="customer/sizing" routerLinkActive="active" onclick="toggleMenu()"><h5  style="font-weight: normal">SIZING</h5></a></li>
-    <li><a routerLink="customer/about" routerLinkActive="active" onclick="toggleMenu()"><h5  style="font-weight: normal">ABOUT</h5></a></li>
-    <li><a routerLink="customer/login" routerLinkActive="active" onclick="toggleMenu()"><i
-            class="fa-solid fa-right-to-bracket"></i></a></li>
-    <li><a routerLink="customer/make-payment" routerLinkActive="active" onclick="toggleMenu()"><i
-            class="fa-solid fa-cart-arrow-down"></i></a></li>
-  </ul>
-</header>
+<app-header></app-header>
 <router-outlet></router-outlet>

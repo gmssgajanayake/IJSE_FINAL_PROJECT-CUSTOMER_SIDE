@@ -11,6 +11,7 @@ import { MakePaymentComponent } from './components/make-payment/make-payment.com
 import { NewArrivalsPageComponent } from './components/new-arrivals-page/new-arrivals-page.component';
 import { SizingPageComponent } from './components/sizing-page/sizing-page.component';
 import {HttpClientModule} from "@angular/common/http";
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {HttpClientModule} from "@angular/common/http";
     HomePageComponent,
     MakePaymentComponent,
     NewArrivalsPageComponent,
-    SizingPageComponent
+    SizingPageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
