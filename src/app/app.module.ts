@@ -12,6 +12,16 @@ import { NewArrivalsPageComponent } from './components/new-arrivals-page/new-arr
 import { SizingPageComponent } from './components/sizing-page/sizing-page.component';
 import {HttpClientModule} from "@angular/common/http";
 import { HeaderComponent } from './components/header/header.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatIconModule} from "@angular/material/icon";
+import {MatInputModule} from "@angular/material/input";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatButtonModule} from "@angular/material/button";
+import { CustomerProfileComponent } from './components/customer-profile/customer-profile.component';
+
+
 
 @NgModule({
   declarations: [
@@ -23,12 +33,20 @@ import { HeaderComponent } from './components/header/header.component';
     MakePaymentComponent,
     NewArrivalsPageComponent,
     SizingPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    CustomerProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

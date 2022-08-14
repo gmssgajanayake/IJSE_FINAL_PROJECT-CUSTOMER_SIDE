@@ -7,6 +7,7 @@ import {AboutPageComponent} from "./components/about-page/about-page.component";
 import {CustomerSignUpComponent} from "./components/customer-sign-up/customer-sign-up.component";
 import {MakePaymentComponent} from "./components/make-payment/make-payment.component";
 import {CustomerLoginComponent} from "./components/customer-login/customer-login.component";
+import {CustomerProfileComponent} from "./components/customer-profile/customer-profile.component";
 
 const routes: Routes = [
   {path:'',redirectTo:'customer/home',pathMatch:'full'},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:'customer/about',component:AboutPageComponent},
   {path:'customer/sign-up',component:CustomerSignUpComponent},
   {path:'customer/login',component:CustomerLoginComponent},
-  {path:'customer/make-payment',component:MakePaymentComponent}
+  {path:'customer/make-payment',component:MakePaymentComponent},
+  {path:'customer/customer-profile',component:CustomerProfileComponent}
 ];
 
 @NgModule({

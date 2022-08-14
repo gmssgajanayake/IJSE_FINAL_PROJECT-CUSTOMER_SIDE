@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CartService} from "../../services/cart/cart.service";
 
 @Component({
-  selector: 'app-make-payment',
-  templateUrl: './make-payment.component.html',
-  styleUrls: ['./make-payment.component.scss']
+    selector: 'app-make-payment',
+    templateUrl: './make-payment.component.html',
+    styleUrls: ['./make-payment.component.scss']
 })
 export class MakePaymentComponent implements OnInit {
 
-  constructor() { }
+    public product: any = [];
+    public grandTotal !:number;
 
-  ngOnInit(): void {
-  }
+    constructor(private cartService:CartService) {
+    }
 
+    ngOnInit(): void {
+        this.cartService.getProduct().subscribe(res=>{
+            this.product=res;
+            this.grandTotal=this.cartService.getTotalPrice();
+        })
+    }
+
+    removeItem(item: any) {
+        this.cartService.removeCartItem(item);
+        console.log(item);
+    }
 }

@@ -4,10 +4,73 @@
     </div>
 </section>
 <section>
-    <ng-container *ngIf="false">
-        <h1>Empty</h1>
+    <ng-container *ngIf="product.length==0">
+        <div style="background-color: white; flex-direction: column" class="content banner">
+            <h1>Your cart is empty</h1>
+            <h3>Add to cart what your needs</h3>
+            <button routerLink="/customer/new-arrivals"  routerLinkActive="active" style="border-radius: 0; margin-top: 0" class="btn">Shop Now</button>
+        </div>
     </ng-container>
-    <ng-container *ngIf="true">
+    <ng-container *ngIf="product.length!=0">
+        <div class="col-12 outer">
+            <div class="cart-table">
+                <div class="cart-product">
+                    <table class="table table-hover">
+                        <thead style="background-color: #212727; color: white" class="thead-dark">
+                        <tr style="font-weight: normal">
+                            <th scope="col">ID</th>
+                            <th scope="col">Item</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Unit Price</th>
+                            <th scope="col">Total</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let item of product; let i =index">
+                            <th scope="row" >{{item.id}}</th>
+                            <td style="font-weight: bolder">{{item.name}}</td>
+                            <td> <img style="width: 80px;" src="{{item.imagePath}}" alt=""></td>
+                            <td>{{item.description}}</td>
+                            <td>
+                                <input style="border: none; border-radius: 5px" type="number" id="quantity" name="quantity" [defaultValue]="1" min="1" max="{{item.quantityOnHand}}">
+                            </td>
+                            <td>$ {{item.price}}</td>
+                            <td style="font-weight: bolder">$ 4345.00</td>
+                            <td> <button (click)="removeItem(item)" style="border: 1px solid transparent;border-radius: 0; background-color: transparent;padding: 0;margin: 0" class="btn"><i style="color: #000000 ;" class="fa-solid fa-trash-can"></i></button></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ng-container *ngIf="true">
+                    <div style="background-color: white; flex-direction: column" class="content banner">
+                        <h1>Your must register before buy products on this site</h1>
+                        <h3>Already if you have an account, You can login to site</h3>
+                        <div class="login-btn">
+                            <button routerLink="/customer/login"  routerLinkActive="active" class="btn login">Sign In</button>
+                            <button routerLink="/customer/sign-up"  routerLinkActive="active" class="btn sign-up">Register</button>
+                        </div>
 
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="false">
+                    <div style="background-color: white; flex-direction: column" class="content banner">
+                        <h1>Your must register before buy products on this site</h1>
+                        <h3>Already if you have an account, You can login to site</h3>
+                        <button routerLink="/customer/login" routerLinkActive="active"
+                                style="border-radius: 0; margin-top: 0" class="btn">Shop Now
+                        </button>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+       <!-- <div style="display: table" id="smart-button-container">
+            <div style="text-align: center;">
+                <div id="paypal-button-container"></div>
+            </div>
+        </div>-->
     </ng-container>
 </section>

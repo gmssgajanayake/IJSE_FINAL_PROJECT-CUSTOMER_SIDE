@@ -1,9 +1,47 @@
 <section class="banner" id="banner">
-    <div class="content">
-        <h2>Always Choose Good</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam assumenda dignissimos dolor dolorem
-            doloremque, dolorum illo ipsum iusto laudantium numquam perferendis porro, quae quam suscipit unde vero.
-            Dignissimos, maiores.</p>
-        <a href="#" class="btn">Out Menu</a>
+    <div class="content"></div>
+</section>
+<section>
+    <div class="main-outer" style="margin-top:15px ">
+        <h1 class="card-title">CREATE AN ACCOUNT</h1>
+        <hr>
+        <form style="width: 90%" [formGroup]="customerForm" (ngSubmit)="saveCustomer()">
+            <div class="row" style="flex-direction: column">
+                <div style="width: 100% ; margin-top: 30px"  class="col-12 col-sm-6 col-md-4 col-lg-3 outer">
+                    <mat-form-field style="width: 100%"  class="full-width" appearance="outline">
+                        <mat-label>Customer Name</mat-label>
+                        <input type="text" matInput formControlName="name">
+                    </mat-form-field>
+                </div>
+                <div style="width: 100%;margin-top: 30px"  class="col-12 col-sm-6 col-md-4 col-lg-3 outer">
+                    <mat-form-field style="width: 100%"  class="full-width" appearance="outline">
+                        <mat-label>Customer Email</mat-label>
+                        <input type="text" matInput formControlName="email">
+                    </mat-form-field>
+                </div>
+                <div style="width: 100%;margin-top: 30px"  class="col-12 col-sm-6 col-md-4 col-lg-3 outer">
+                    <mat-form-field style="width: 100%"  class="full-width" appearance="outline">
+                        <mat-label>Customer password</mat-label>
+                        <input type="text" matInput formControlName="password">
+                    </mat-form-field>
+                </div>
+                <div style="width: 100%;margin-top: 30px"  class="col-12 col-sm-6 col-md-4 col-lg-3 outer">
+                    <mat-form-field style="width: 100%"  class="full-width" appearance="outline">
+                        <mat-label>Customer Address</mat-label>
+                        <input type="text" matInput formControlName="address">
+                    </mat-form-field>
+                </div>
+                <div style="width: 100%;margin-top: 30px" class="col-12 col-sm-6 col-md-4 col-lg-3 outer">
+                    <mat-form-field style="width: 100%" class="full-width" appearance="outline">
+                        <mat-label>Customer Phone Number</mat-label>
+                        <input type="number" matInput formControlName="phoneNumber">
+                    </mat-form-field>
+                </div>
+                <button  type="submit" style="background-color: black;margin-top: 20px;margin-bottom: 20px; border-radius: 0" [disabled]="customerForm?.invalid"
+                        class="btn sign-up">Sign Up
+                </button>
+            </div>
+        </form>
     </div>
-</section><!---->
+</section>
+

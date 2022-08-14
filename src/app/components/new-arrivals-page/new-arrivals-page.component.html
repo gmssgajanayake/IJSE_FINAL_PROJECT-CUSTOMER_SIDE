@@ -16,14 +16,14 @@
                 <div class="imgBx">
                     <img src="{{item.imagePath}}" alt="image">
                 </div>
-                <div class="text">
-                    <h2>{{item.name}}</h2>
-                    <h3>{{item.description}}</h3>
-                    <h3 style="font-weight: bold">$ {{item.price}}</h3>
+                <div class="text"style="margin-bottom: 0">
+                    <h2 style="font-size:25px">{{item.name}}</h2>
+                    <h3 style="font-size:18px">{{item.description}}</h3>
+                    <h3 style="font-weight: bold; font-size:18px">$ {{item.price}}</h3>
                 </div>
 
-                <button (click)="addToCart(item)" class="btn">Add to Cart</button>
-                <button class="btn fav">Add Favourite  <i class="fa-regular fa-heart"></i> </button>
+                <button style="border-radius: 0; margin-top: 0" (click)="addToCart(item)" class="btn">Add to Cart</button>
+                <button style="border-radius: 0;  margin-top: 10px" class="btn fav">Add Favourite  <i class="fa-regular fa-heart"></i> </button>
             </div>
         </ng-container>
     </div>

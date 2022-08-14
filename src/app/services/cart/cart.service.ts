@@ -29,23 +29,27 @@ export class CartService {
         console.log(this.cartItemList)
     }
 
-    getTotalPrice() {
+    getTotalPrice(): number {
         let grandTotal = 0;
         this.cartItemList.map((a: any) => {
             grandTotal += a.total;
         })
+        return grandTotal;
     }
 
-    removeCartItem(product:any){
-        this.cartItemList.map((a:any,index:any)=>{
-            if(product.id===a.id){
-                this.cartItemList.slice(index,1);
+    removeCartItem(product: any) {
+        this.cartItemList.map((a: any, index: any) => {
+            console.log(a);
+            console.log(index);
+            if (product.id === a.id) {
+                this.cartItemList.splice(index, 1);
             }
         })
+        this.productList.next(this.cartItemList);
     }
 
-    removeAllCart(){
-        this.cartItemList=[];
+    removeAllCart() {
+        this.cartItemList = [];
         this.cartItemList.next(this.cartItemList);
     }
 
