@@ -2,10 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CustomerService} from "../../../../../services/customer/customer.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {CookieService} from "ngx-cookie-service";
 import {LocalDataService} from "../../../../../services/LocalData/local-data.service";
 import {Router} from "@angular/router";
-import {UserDetailDTO} from "../../../../../model/UserDetailDTO";
+
 
 @Component({
     selector: 'app-login',
@@ -33,9 +32,7 @@ export class LoginComponent implements OnInit {
         return this.localDataService.isLogged().then(response => {
             console.log(response);
             this.router.navigate(['/customer/dashboard']);
-        }).catch(error => {
-
-        });
+        }).catch(error => {});
     }
 
     login() {

@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserDetailDTO} from "../../../../../model/UserDetailDTO";
 import {CustomerService} from "../../../../../services/customer/customer.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {Route, Router} from "@angular/router";
 
 @Component({
     selector: 'app-sign-up',
@@ -27,7 +28,7 @@ export class SignUpComponent implements OnInit {
             [Validators.required])
     });
 
-    constructor(private customerService: CustomerService,private _snackBar: MatSnackBar) {
+    constructor(private router: Router ,private customerService: CustomerService, private _snackBar: MatSnackBar) {
     }
 
     ngOnInit(): void {
@@ -44,24 +45,25 @@ export class SignUpComponent implements OnInit {
         );
 
         this.customerService.saveCustomer(dataDto).subscribe(response => {
-                this.openSnackBar('You have successfully registered.','close');
+            this.openSnackBar('You are successfully registered.', 'close');
             console.log(response);
+            this.router.navigate(['/customer/login']);
+
         }, error => {
             console.log(error);
-            if(error.code===500){
-                this.openSnackBar('This email is already registered','close');
-            }else{
-                this.openSnackBar('Something went wrong !!!','close');
+            if (error.code === 500) {
+                this.openSnackBar('This email is already registered', 'close');
+            } else {
+                this.openSnackBar('Something went wrong !!!', 'close');
             }
-
-        })
+        });
 
     }
 
     //To get conformation response
     openSnackBar(message: string, action: string) {
-        this._snackBar.open(message, action,{
-            duration:3000
+        this._snackBar.open(message, action, {
+            duration: 3000
         });
     }
 

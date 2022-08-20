@@ -1,6 +1,72 @@
 <section class="banner" id="banner">
     <div class="content">
-        <h2 style="margin-top: 20px;line-height: 120%">ACCOUNT MANAGE</h2>
     </div>
 </section>
-<button (click)="logout()" class="btn" mat-button color="primary" mat-raised-button>Login</button>
+
+<section style="height: 100vh">
+    <div class="main-outer">
+        <div class="header">
+            <h1 class="card-title">YOUR PROFILE</h1>
+            <button style="background-color: black" (click)="logout()" class="btn" mat-button color="primary"
+                    mat-raised-button>Log out
+            </button>
+        </div>
+        <hr>
+        <!--[formGroup]="customerForm" (ngSubmit)="updateCustomer()"-->
+        <form [formGroup]="customerForm"><!--[formGroup]="idForm" (ngSubmit)="findCustomer()"-->
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 outer">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>ID</mat-label>
+                        <input value="{{id}}" [disabled]="true" type="text" matInput formControlName="id">
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 outer">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input value="{{email}}" [disabled]="true" type="email" matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 outer"></div>
+                <hr>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 outer">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Full Name</mat-label>
+                        <input value="sakuja" type="text" matInput formControlName="name">
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 outer">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Address</mat-label>
+                        <input type="text" matInput formControlName="address">
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 outer">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Phone Number</mat-label>
+                        <input type="number" matInput formControlName="phoneNumber">
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 outer">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput formControlName="password">
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 outer btn-outer-save">
+                    <button [disabled]="customerForm?.invalid" (click)="updateCustomer()" type="submit" class="save-btn" mat-raised-button
+                            color="primary">
+                        <!-- -->Update Customer
+                    </button>
+
+                    <button type="submit" class="save-btn" mat-raised-button color="warm"></button>
+
+                    <button (click)="deleteCustomer()" style="background-color: #ff0000" mat-raised-button color="warn">Delete Customer <i
+                            class="fa-solid fa-trash-can"></i></button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</section>

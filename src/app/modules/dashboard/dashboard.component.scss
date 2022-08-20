@@ -5,7 +5,7 @@ p {
 
 .banner {
   width: 100%;
-  min-height:50vh;
+  min-height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,4 +27,76 @@ p {
 .banner .content p {
   font-size: 1em;
   color: #fff;
+}
+
+.main-outer {
+  margin-top: 30px;
+}
+
+.card-title {
+  margin-left: 10px;
+}
+
+h1 {
+  font-weight: bold;
+  color: #192a56;
+  letter-spacing: 1px;
+}
+
+.row {
+  margin: 10px 20px;
+  justify-content: space-between;
+}
+
+.full-width {
+  width: 250px;
+  height: 60px;
+}
+
+.btn-outer-save {
+  width: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-outer .header {
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.full-width {
+  margin: 30px 0;
+}
+
+.delete {
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  section {
+    padding: 20px;
+  }
+
+  .banner .content h2 {
+    font-size: 3em;
+    color: #fff;
+  }
+
+  .delete {
+    width: 20%;
+  }
+
+  .full-width {
+    margin: 10px 0;
+  }
+  .btn-outer-save{
+    flex-direction: column;
+  }
+
+  .save-btn{
+    margin: 10px 0;
+  }
 }
