@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CustomerProfileComponent } from './customer-profile.component';
+import { AuthContextComponent } from './auth-context.component';
 
-describe('CustomerProfileComponent', () => {
-  let component: CustomerProfileComponent;
-  let fixture: ComponentFixture<CustomerProfileComponent>;
+describe('AuthContextComponent', () => {
+  let component: AuthContextComponent;
+  let fixture: ComponentFixture<AuthContextComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CustomerProfileComponent ]
+      declarations: [ AuthContextComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CustomerProfileComponent);
+    fixture = TestBed.createComponent(AuthContextComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

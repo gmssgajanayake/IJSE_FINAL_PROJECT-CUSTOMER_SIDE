@@ -1,0 +1,14 @@
+<div class="col-12">
+    <form [formGroup]="loginForm" class="example-form">
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input formControlName="email"  type="email" matInput placeholder="Ex. pat@example.com">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input formControlName="password"  type="password" matInput placeholder="">
+        </mat-form-field>
+        <button [disabled]="loginForm.invalid" (click)="login()" class="btn" mat-button color="primary" mat-raised-button>Login</button>
+    </form>
+</div>
+

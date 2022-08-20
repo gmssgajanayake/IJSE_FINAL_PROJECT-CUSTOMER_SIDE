@@ -1,0 +1,52 @@
+.example-full-width {
+  width: 100%;
+}
+
+input {
+  color: black;
+}
+
+.col-12 {
+  padding: 20px 0;
+}
+
+button {
+  width: 100%;
+}
+
+.btn {
+  font-size: 1em;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+  background-color: black;
+  border-radius: 0;
+  height: 40px;
+  /*An animation*/
+  transition: 0.5s;
+
+}
+
+.btn:hover {
+  letter-spacing: 6px;
+}
+
+.blue-snackbar {
+  background: #2196F3;
+}
+
+.red-snackbar {
+  background: rgba(255, 1, 87, 0.77);
+}
+
+@media (max-width: 991px) {
+
+  .example-full-width {
+    width: 100vw;
+  }
+  .col-12 {
+    width: 100%;
+  }
+}

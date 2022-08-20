@@ -1,0 +1,30 @@
+p {
+  font-weight: 300;
+  color: #000000;
+}
+
+.banner {
+  width: 100%;
+  min-height:50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-size: cover;
+  background-color: black;
+}
+
+.banner .content {
+  max-width: 900px;
+  text-align: center;
+}
+
+.banner .content h2 {
+  font-size: 4em;
+  color: #ffffff;
+}
+
+.banner .content p {
+  font-size: 1em;
+  color: #fff;
+}

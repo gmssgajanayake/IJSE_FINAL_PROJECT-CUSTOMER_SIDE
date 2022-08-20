@@ -1,0 +1,29 @@
+<div class="col-12">
+    <form [formGroup]="signUpForm" class="example-form">
+        <mat-form-field style="width: 48%;margin-right: 4%" class="example-full-width" appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input formControlName="firstName" type="text" matInput placeholder="Ex. Bandana">
+        </mat-form-field>
+        <mat-form-field style="width: 48%" class="example-full-width" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input formControlName="lastName" type="text" matInput placeholder="Ex. Perera">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input formControlName="email"  type="email" matInput placeholder="Ex. pat@example.com">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input formControlName="password"  type="password" matInput placeholder="">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Address</mat-label>
+            <input formControlName="address"  type="text" matInput placeholder="">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Phone Number</mat-label>
+            <input formControlName="phoneNumber"  type="number" matInput placeholder="">
+        </mat-form-field>
+        <button [disabled]="signUpForm.invalid" (click)="signUp()" class="btn" mat-button color="primary" mat-raised-button>Sign Up</button>
+    </form>
+</div>
