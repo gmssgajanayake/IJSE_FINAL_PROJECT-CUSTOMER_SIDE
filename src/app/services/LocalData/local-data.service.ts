@@ -32,7 +32,7 @@ export class LocalDataService {
     }
 
     public deleteCookie(key:string){
-        this.cookieService.delete(key);
+        this.cookieService.deleteAll();
     }
 
 }

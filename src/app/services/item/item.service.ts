@@ -14,7 +14,7 @@ export class ItemService {
     return this.http.get<any>("http://localhost:8080/api/v1/items")
         .pipe(map((res:any)=>{
           return res;
-        }))
+        }));
   }
 
     public saveItem(data: any): Observable<any> {

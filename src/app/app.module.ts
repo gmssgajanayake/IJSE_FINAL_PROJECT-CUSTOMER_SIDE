@@ -11,7 +11,7 @@ import {SizingPageComponent} from './components/sizing-page/sizing-page.componen
 import {HttpClientModule} from "@angular/common/http";
 import {HeaderComponent} from './components/header/header.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
@@ -52,7 +52,8 @@ import {CookieService} from "ngx-cookie-service";
         MatFormFieldModule,
         MatButtonModule,
         MatTabsModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        FormsModule
     ],
     providers: [
         CookieService

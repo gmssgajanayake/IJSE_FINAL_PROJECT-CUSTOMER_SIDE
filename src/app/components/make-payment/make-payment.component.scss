@@ -64,6 +64,13 @@ p {
   justify-content: center
 }
 
+mat-form-field {
+  width: 100%;
+  margin-right: 4%
+}
+
+
+
 @media (max-width: 991px) {
   section {
     padding: 20px;
@@ -74,3 +81,4 @@ p {
     color: #fff;
   }
 }
+
