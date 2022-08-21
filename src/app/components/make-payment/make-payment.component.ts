@@ -112,7 +112,7 @@ export class MakePaymentComponent implements OnInit {
             this.orderService.saveOrder(new OrderDetailDTO(
                 this.customerId,
                 this.product[i].id,
-                String(new Date().getDate()),
+                String(new Date().getDate()+' / '+new Date().getMonth()+' / '+new Date().getFullYear()),
                 this.orderDetailForm.get('address')?.value,
                 'pending',
                 this.product[i].price,

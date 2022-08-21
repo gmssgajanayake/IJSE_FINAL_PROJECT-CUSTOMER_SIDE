@@ -5,6 +5,7 @@ import {CustomerService} from "../../services/customer/customer.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserDetailDTO} from "../../model/UserDetailDTO";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {OrdersService} from "../../services/order/orders.service";
 
 @Component({
     selector: 'app-dashboard',
@@ -12,7 +13,8 @@ import {MatSnackBar} from "@angular/material/snack-bar";
     styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+    public orderList: any = [];
+    public allOrderList: any = [];
     public id: string = '';
     public email: string = '';
 
@@ -28,12 +30,22 @@ export class DashboardComponent implements OnInit {
     });
 
     constructor(private router: Router, private localDataService: LocalDataService,
-                private customerService: CustomerService, private _snackBar: MatSnackBar) {
+                private customerService: CustomerService, private _snackBar: MatSnackBar,private orderService:OrdersService) {
     }
 
     ngOnInit(): void {
         this.id = this.localDataService.getCookie('customerId');
         this.findCustomer();
+        this.orderService.getOrders().subscribe(response=>{
+            for (let i = 0; i < response.data.length; i++){
+                if(response.data[i].customerId===this.id){
+                    this.orderList.push(response.data[i]);
+                }
+            }
+            console.log(this.orderList);
+        },error=>{
+            console.log(error);
+        });
     }
 
 

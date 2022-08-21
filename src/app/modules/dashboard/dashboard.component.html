@@ -65,7 +65,95 @@
                 </div>
             </div>
         </form>
-
     </div>
+</section>
+<!--*ngIf="product.length!=0"-->
+<!--
+<ng-container>
+    <div class="col-12 outer">
+        <div class="cart-table">
+            <div class="cart-product">
+                <table class="table table-hover">
+                    <thead style="background-color: #212727; color: white" class="thead-dark">
+                    <tr style="font-weight: normal">
+                        <th scope="col">ID</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col">Price</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                   &lt;!&ndash; *ngFor="let item of product; let i =index"&ndash;&gt;
+                    <tr >
+                        &lt;!&ndash;{{item.id}}&ndash;&gt;
+                        <th scope="row" ></th>
+                        &lt;!&ndash;{{item.name}}&ndash;&gt;
+                        <td style="font-weight: bolder"></td>
+                        &lt;!&ndash;{{item.imagePath}}&ndash;&gt;
+                        <td> <img style="width: 80px;" src="" alt=""></td>
+                        &lt;!&ndash;{{item.description}}&ndash;&gt;
+                        <td></td>
+                        <td>
+                            &lt;!&ndash;[(ngModel)]="item.quantity" (change)="setQut(item)"&ndash;&gt;&lt;!&ndash;max="{{item.quantityOnHand}}"&ndash;&gt;
+                            <input   style="border: none; border-radius: 5px" type="number" id="quantity" name="quantity" [defaultValue]="1" min="1" >
+                        </td>
+                        &lt;!&ndash;$ {{item.price}}.00&ndash;&gt;
+                        <td></td>
+                       &lt;!&ndash; $ {{item.total}}.00&ndash;&gt;
+                        <td style="font-weight: bolder"></td>
+                        &lt;!&ndash;(click)="removeItem(item)"&ndash;&gt;
+                        <td> <button  style="border: 1px solid transparent;border-radius: 0; background-color: transparent;padding: 0;margin: 0" class="btn"><i style="color: #000000 ;" class="fa-solid fa-trash-can"></i></button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-container>
+-->
+
+<section  style="height: 50%">
+
+    <!--*ngIf="product.length!=0"-->
+    <ng-container *ngIf="orderList.length!=0" >
+        <h1 class="card-title">YOUR PLACED ORDER</h1>
+        <div class="col-12 outer">
+            <div class="cart-table">
+                <div class="cart-product">
+                    <table class="table table-hover">
+                        <thead style="background-color: #212727; color: white" class="thead-dark">
+                        <tr style="font-weight: normal">
+                            <th scope="col">Order ID</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Item ID</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Unit Price</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Shipping Status</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                       <!-- -->
+                        <tr *ngFor="let order of orderList; let i =index">
+                            <th scope="row" >{{order.id}}</th>
+                            <td>{{order.date}}</td>
+                            <td>{{order.itemId}}</td>
+                            <td>{{order.quantity}}</td>
+                            <td>$ {{order.unitPrice}}.00</td>
+                            <td>$ {{order.total}}.00</td>
+                            <td>{{order.shippingStatus}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
 
 </section>
