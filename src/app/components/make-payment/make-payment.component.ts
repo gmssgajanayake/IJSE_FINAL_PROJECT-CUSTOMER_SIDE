@@ -4,6 +4,11 @@ import {LocalDataService} from "../../services/LocalData/local-data.service";
 import {CustomerService} from "../../services/customer/customer.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {OrdersService} from "../../services/order/orders.service";
+import {OrderDetailDTO} from "../../model/OrderDetailDTO";
+import {ItemService} from "../../services/item/item.service";
+import {ItemDetailDTO} from "../../model/ItemDetailDTO";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-make-payment',
@@ -11,20 +16,20 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
     styleUrls: ['./make-payment.component.scss']
 })
 export class MakePaymentComponent implements OnInit {
+    [x: string]: any;
 
     public product: any = [];
     public grandTotal !: number;
     public loggingCheck: boolean = false;
-    public price !: number;
     public total !: number;
+    public itemShippingCost !: number;
     public shippingCost !: number;
     public tax !: number;
+    public itemTax !: number;
     public email!: string;
     public name!: string;
-    public shippingAddress!: string;
     public customerId!: string;
-    public date!: string;
-    public shippingStatus: string = 'pending';
+
     orderDetailForm = new FormGroup({
         name: new FormControl(),
         email: new FormControl([Validators.email]),
@@ -36,7 +41,8 @@ export class MakePaymentComponent implements OnInit {
 
 
     constructor(private cartService: CartService, private localDataService: LocalDataService,
-                private customerService: CustomerService, private _snackBar: MatSnackBar) {
+                private customerService: CustomerService, private _snackBar: MatSnackBar,
+                private orderService: OrdersService,private itemService:ItemService,private router: Router ) {
     }
 
 
@@ -52,7 +58,6 @@ export class MakePaymentComponent implements OnInit {
             this.grandTotal = this.cartService.getTotalPrice();
         });
         this.getTotal();
-        this.date = String(new Date().getDate());
         this.findCustomer();
     }
 
@@ -98,5 +103,58 @@ export class MakePaymentComponent implements OnInit {
             console.log(error);
         })
     }
+
+    placeOrder() {
+        for (let i = 0; i < this.product.length; i++) {
+            this.itemTax=parseInt(Number(this.product[i].total * 0.12).toFixed(2));
+            this.itemShippingCost=parseInt(Number(this.product[i].total * 0.05).toFixed(2));
+
+            this.orderService.saveOrder(new OrderDetailDTO(
+                this.customerId,
+                this.product[i].id,
+                String(new Date().getDate()),
+                this.orderDetailForm.get('address')?.value,
+                'pending',
+                this.product[i].price,
+                this.product[i].quantity,
+                this.itemTax,
+                this.itemShippingCost,
+                parseInt(
+                    Number(this.itemShippingCost + this.itemTax + this.product[i].total)
+                        .toFixed(2)
+                )
+            )).subscribe(response=>{
+                console.log(response);
+
+                this.itemService.updateItem(this.product[i].id,new ItemDetailDTO(
+                    this.product[i].name,
+                    this.product[i].description,
+                    this.product[i].imagePath,
+                    this.product[i].mainCategory,
+                    this.product[i].subCategory,
+                    (this.product[i].quantityOnHand-this.product[i].quantity),
+                    this.product[i].price
+                )).subscribe(response=>{
+                    console.log(response);
+                    this.openSnackBar('You are successfully placed.', 'close');
+                    this.router.navigate(['/customer/dashboard']);
+                },error=>{
+                    this.openSnackBar('Error !!!', 'close');
+                });
+
+            },error => {
+                console.log(error);
+                this.openSnackBar('Error !!!', 'close');
+            });
+        }
+    }
+
+    //To get conformation response
+    openSnackBar(message: string, action: string) {
+        this._snackBar.open(message, action, {
+            duration: 3000
+        });
+    }
+
 
 }

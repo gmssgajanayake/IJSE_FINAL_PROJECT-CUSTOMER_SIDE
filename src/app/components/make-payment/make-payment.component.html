@@ -66,7 +66,7 @@
                             <form [formGroup]="orderDetailForm" class="example-form">
                                 <mat-form-field class="example-full-width" appearance="outline">
                                     <mat-label>Full Name</mat-label>
-                                    <input [disabled]="true" value="{{name}}" formControlName="name" type="text" matInput placeholder="Ex. Bandana">
+                                    <input [disabled]="false" value="{{name}}" formControlName="name" type="text" matInput placeholder="Ex. Bandana">
                                 </mat-form-field>
                                 <mat-form-field class="example-full-width" appearance="outline">
                                     <mat-label>Email</mat-label>
@@ -85,8 +85,7 @@
                                     <div style="width: 47%"  class="col-12 col-sm-6 col-md-8"><h4 class="card-title">Shipping : $ {{shippingCost}}.00</h4></div>
                                     <div class="col-12 col-sm-6 col-md-8"><h2 class="card-title">Total : $ {{total}}.00</h2></div>
                                 </div>
-                               <!-- [disabled]="signUpForm.invalid" (click)="signUp()"-->
-                                <button style="width: 100%" class="btn" mat-button color="primary" mat-raised-button>Place Your Order</button>
+                                <button (click)=" placeOrder()" style="width: 100%" class="btn" mat-button color="primary" mat-raised-button>Place Your Order</button>
                             </form>
                         </div>
 
@@ -94,13 +93,5 @@
                 </ng-container>
             </div>
         </div>
-       <!-- <div style="display: table" id="smart-button-container">
-            <div style="text-align: center;">
-                <div id="paypal-button-container"></div>
-            </div>
-        </div>-->
-        <!--<h1>Shipping cost : $ </h1>
-        <h1>Tax : $ </h1>
-        <h1>Total : $ </h1>-->
     </ng-container>
 </section>

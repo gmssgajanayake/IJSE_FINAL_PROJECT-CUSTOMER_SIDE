@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
 import {Observable} from "rxjs";
+import {ItemDetailDTO} from "../../model/ItemDetailDTO";
 
 @Injectable({
   providedIn: 'root'
@@ -29,15 +30,15 @@ export class ItemService {
         })
     }
 
-    public updateItem(id: any, data: any): Observable<any> {
+    public updateItem(id: any, data: ItemDetailDTO): Observable<any> {
         return this.http.put('http://localhost:8080/api/v1/items?id=' + id, {
-            name: data?.name,
-            description: data?.description,
-            imagePath: data?.imagePath,
-            mainCategory: data?.mainCategory,
-            subCategory: data?.subCategory,
-            quantity: data?.quantity,
-            price: data?.price
+            name: data.name,
+            description: data.description,
+            imagePath: data.imagePath,
+            mainCategory: data.mainCategory,
+            subCategory: data.subCategory,
+            quantity: data.quantity,
+            price: data.price
         });
     }
 
