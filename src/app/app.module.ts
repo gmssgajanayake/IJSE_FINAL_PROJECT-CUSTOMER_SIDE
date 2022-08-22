@@ -24,7 +24,7 @@ import {NotFoundPageComponent} from './components/not-found-page/not-found-page.
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
 import {CookieService} from "ngx-cookie-service";
-import { FooterComponent } from './components/footer/footer.component';
+import {FooterComponent} from './components/footer/footer.component';
 
 
 @NgModule({

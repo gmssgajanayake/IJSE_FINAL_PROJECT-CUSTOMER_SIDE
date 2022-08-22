@@ -42,7 +42,7 @@ export class MakePaymentComponent implements OnInit {
 
     constructor(private cartService: CartService, private localDataService: LocalDataService,
                 private customerService: CustomerService, private _snackBar: MatSnackBar,
-                private orderService: OrdersService,private itemService:ItemService,private router: Router ) {
+                private orderService: OrdersService, private itemService: ItemService, private router: Router) {
     }
 
 
@@ -106,13 +106,13 @@ export class MakePaymentComponent implements OnInit {
 
     placeOrder() {
         for (let i = 0; i < this.product.length; i++) {
-            this.itemTax=parseInt(Number(this.product[i].total * 0.12).toFixed(2));
-            this.itemShippingCost=parseInt(Number(this.product[i].total * 0.05).toFixed(2));
+            this.itemTax = parseInt(Number(this.product[i].total * 0.12).toFixed(2));
+            this.itemShippingCost = parseInt(Number(this.product[i].total * 0.05).toFixed(2));
 
             this.orderService.saveOrder(new OrderDetailDTO(
                 this.customerId,
                 this.product[i].id,
-                String(new Date().getDate()+' / '+new Date().getMonth()+' / '+new Date().getFullYear()),
+                String(new Date().getDate() + ' / ' + new Date().getMonth() + ' / ' + new Date().getFullYear()),
                 this.orderDetailForm.get('address')?.value,
                 'pending',
                 this.product[i].price,
@@ -123,26 +123,26 @@ export class MakePaymentComponent implements OnInit {
                     Number(this.itemShippingCost + this.itemTax + this.product[i].total)
                         .toFixed(2)
                 )
-            )).subscribe(response=>{
+            )).subscribe(response => {
                 console.log(response);
 
-                this.itemService.updateItem(this.product[i].id,new ItemDetailDTO(
+                this.itemService.updateItem(this.product[i].id, new ItemDetailDTO(
                     this.product[i].name,
                     this.product[i].description,
                     this.product[i].imagePath,
                     this.product[i].mainCategory,
                     this.product[i].subCategory,
-                    (this.product[i].quantityOnHand-this.product[i].quantity),
+                    (this.product[i].quantityOnHand - this.product[i].quantity),
                     this.product[i].price
-                )).subscribe(response=>{
+                )).subscribe(response => {
                     console.log(response);
                     this.openSnackBar('You are successfully placed.', 'close');
                     this.router.navigate(['/customer/dashboard']);
-                },error=>{
+                }, error => {
                     this.openSnackBar('Error !!!', 'close');
                 });
 
-            },error => {
+            }, error => {
                 console.log(error);
                 this.openSnackBar('Error !!!', 'close');
             });

@@ -18,8 +18,8 @@ export class NewArrivalsPageComponent implements OnInit {
         this.api.getProduct().subscribe(res => {
             this.productList = res.data;
 
-            this.productList.forEach((a:any)=>{
-                Object.assign(a,{quantity:1,total:a.price})
+            this.productList.forEach((a: any) => {
+                Object.assign(a, {quantity: 1, total: a.price})
             })
         })
     }

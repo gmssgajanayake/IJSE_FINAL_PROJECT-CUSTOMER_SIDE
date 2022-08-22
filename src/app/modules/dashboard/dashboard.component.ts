@@ -17,9 +17,8 @@ export class DashboardComponent implements OnInit {
     public allOrderList: any = [];
     public id: string = '';
     public email: string = '';
-    page : number|undefined=0;
-    pageSize : number|undefined=10;
-
+    page: number | undefined = 0;
+    pageSize: number | undefined = 10;
 
 
     customerForm = new FormGroup({
@@ -34,20 +33,20 @@ export class DashboardComponent implements OnInit {
     });
 
     constructor(private router: Router, private localDataService: LocalDataService,
-                private customerService: CustomerService, private _snackBar: MatSnackBar,private orderService:OrdersService) {
+                private customerService: CustomerService, private _snackBar: MatSnackBar, private orderService: OrdersService) {
     }
 
     ngOnInit(): void {
         this.id = this.localDataService.getCookie('customerId');
         this.findCustomer();
-        this.orderService.getOrders().subscribe(response=>{
-            for (let i = 0; i < response.data.length; i++){
-                if(response.data[i].customerId===this.id){
+        this.orderService.getOrders().subscribe(response => {
+            for (let i = 0; i < response.data.length; i++) {
+                if (response.data[i].customerId === this.id) {
                     this.orderList.push(response.data[i]);
                 }
             }
             console.log(this.orderList);
-        },error=>{
+        }, error => {
             console.log(error);
         });
     }
@@ -107,7 +106,7 @@ export class DashboardComponent implements OnInit {
             this.customerService.deleteCustomer(this.id).subscribe(res => {
                 console.log(res);
                 this.logout();
-            },error => {
+            }, error => {
                 console.log(error);
             });
 

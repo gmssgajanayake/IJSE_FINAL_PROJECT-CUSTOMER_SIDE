@@ -23,15 +23,15 @@ export class LocalDataService {
 
     public async isLogged(): Promise<any> {
         return new Promise((resolve, reject) => {
-            if(this.getCookie('customerId')){
+            if (this.getCookie('customerId')) {
                 resolve(true);
-            }else{
+            } else {
                 reject(false);
             }
         });
     }
 
-    public deleteCookie(key:string){
+    public deleteCookie(key: string) {
         this.cookieService.deleteAll();
     }
 

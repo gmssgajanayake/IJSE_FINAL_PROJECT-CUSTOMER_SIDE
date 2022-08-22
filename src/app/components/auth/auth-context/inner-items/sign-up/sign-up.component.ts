@@ -28,7 +28,7 @@ export class SignUpComponent implements OnInit {
             [Validators.required])
     });
 
-    constructor(private router: Router ,private customerService: CustomerService, private _snackBar: MatSnackBar) {
+    constructor(private router: Router, private customerService: CustomerService, private _snackBar: MatSnackBar) {
     }
 
     ngOnInit(): void {

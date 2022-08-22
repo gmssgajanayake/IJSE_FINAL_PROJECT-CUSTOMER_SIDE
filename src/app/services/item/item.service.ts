@@ -1,22 +1,23 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
 import {Observable} from "rxjs";
 import {ItemDetailDTO} from "../../model/ItemDetailDTO";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ItemService {
 
-  constructor(private http : HttpClient) { }
+    constructor(private http: HttpClient) {
+    }
 
-  getProduct(){
-    return this.http.get<any>("http://localhost:8080/api/v1/items")
-        .pipe(map((res:any)=>{
-          return res;
-        }));
-  }
+    getProduct() {
+        return this.http.get<any>("http://localhost:8080/api/v1/items")
+            .pipe(map((res: any) => {
+                return res;
+            }));
+    }
 
     public saveItem(data: any): Observable<any> {
         return this.http.post('http://localhost:8080/api/v1/items', {

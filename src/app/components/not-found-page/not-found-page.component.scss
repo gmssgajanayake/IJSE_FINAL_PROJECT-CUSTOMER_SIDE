@@ -13,7 +13,7 @@ p {
   align-items: center;
   position: relative;
   background-size: cover;
-  background-color:black;
+  background-color: black;
 }
 
 .banner .content {
@@ -21,8 +21,7 @@ p {
   text-align: center;
 }
 
-.banner .content h1
-{
+.banner .content h1 {
   font-size: 4em;
   color: #ffffff;
 }
@@ -31,7 +30,6 @@ p {
   font-size: 1em;
   color: #fff;
 }
-
 
 
 /***********************************
@@ -90,6 +88,7 @@ fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, 
 .top-header:before {
   background-image: url(https://1.bp.blogspot.com/-gxsOcYWghHA/Xp_izTh4sFI/AAAAAAAAU8s/y637Fwg99qAuzW9na_NT_uApny8Vce95gCEwYBhgL/s1600/header-footer-gradient-bg.png);
 }
+
 .top-header:before {
   content: '';
   display: block;
@@ -100,11 +99,11 @@ fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, 
   position: absolute;
   top: 0;
   left: 0;
-  opacity:0.5;
+  opacity: 0.5;
 }
 
 
-.starsec{
+.starsec {
   content: " ";
   position: absolute;
   width: 3px;
@@ -114,8 +113,7 @@ fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, 
   animation: animStar 150s linear infinite;
 }
 
-.starthird
-{
+.starthird {
   content: " ";
   position: absolute;
   width: 3px;
@@ -125,8 +123,7 @@ fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, 
   animation: animStar 10s linear infinite;
 }
 
-.starfourth
-{
+.starfourth {
   content: " ";
   position: absolute;
   width: 2px;
@@ -136,8 +133,7 @@ fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, 
   animation: animStar 50s linear infinite;
 }
 
-.starfifth
-{
+.starfifth {
   content: " ";
   position: absolute;
   width: 1px;
@@ -147,8 +143,7 @@ fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, 
   animation: animStar 80s linear infinite;
 }
 
-@keyframes animStar
-{
+@keyframes animStar {
   0% {
     transform: translateY(0px);
   }
@@ -156,7 +151,6 @@ fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, 
     transform: translateY(-2000px);
   }
 }
-
 
 
 button {
@@ -332,6 +326,7 @@ button {
 .e-nav__link:nth-child(2):hover:after {
   color: #ffffff;
 }
+
 /* 2.1. END Section Error */
 
 /* 2.2. Social style */
@@ -368,6 +363,7 @@ button {
 .e-social__link:hover {
   opacity: .7;
 }
+
 /* 2.2. END Social style */
 
 /* 2.3. Lamp */
@@ -401,7 +397,7 @@ button {
 .cable {
   width: 8px;
   height: 248px;
-  background-image: linear-gradient(rgb(32 148 218 / 70%), rgb(193 65 25)), linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+  background-image: linear-gradient(rgb(32 148 218 / 70%), rgb(193 65 25)), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
 }
 
 .cover {
@@ -427,6 +423,7 @@ button {
   bottom: -9px;
   z-index: 100;
 }
+
 .in-cover .bulb {
   width: 50px;
   height: 50px;
@@ -437,8 +434,8 @@ button {
   right: 0px;
   bottom: -20px;
   margin: 0px auto;
-  -webkit-box-shadow: 0 0 15px 7px rgba(0,255,255,0.8), 0 0 40px 25px rgba(0,255,255,0.5), -75px 0 30px 15px rgba(0,255,255,0.2);
-  box-shadow: 0 0 25px 7px rgb(127 255 255 / 80%), 0 0 64px 47px rgba(0,255,255,0.5), 0px 0 30px 15px rgba(0,255,255,0.2);
+  -webkit-box-shadow: 0 0 15px 7px rgba(0, 255, 255, 0.8), 0 0 40px 25px rgba(0, 255, 255, 0.5), -75px 0 30px 15px rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 25px 7px rgb(127 255 255 / 80%), 0 0 64px 47px rgba(0, 255, 255, 0.5), 0px 0 30px 15px rgba(0, 255, 255, 0.2);
 }
 
 
@@ -456,6 +453,7 @@ button {
   z-index: 1;
   border-radius: 90px 90px 0px 0px;
 }
+
 /* 2.3. END Lamp */
 /***********************************
 			/* 2. END CONTENT */
@@ -468,6 +466,7 @@ button {
   overflow: hidden;
   max-height: 100vh;
 }
+
 @media (max-width: 1400px) {
   .lamp {
     zoom: .5;
@@ -479,6 +478,7 @@ button {
     font-size: 3.5rem;
   }
 }
+
 @media (max-width: 900px) {
 
   .message__title {
@@ -489,6 +489,7 @@ button {
     top: 55%;
   }
 }
+
 @media (max-width: 950px) {
   .lamp__wrap {
     max-height: 100vh;
@@ -514,6 +515,7 @@ button {
     padding-bottom: 0;
   }
 }
+
 @media (max-width: 750px) {
   body, html, {
     max-height: 100vh;
@@ -530,6 +532,7 @@ button {
     height: 100vh;
   }
 }
+
 @media (max-width: 650px) {
   .message__title {
     font-size: 36px;
@@ -548,6 +551,7 @@ button {
     padding-top: 180px;
   }
 }
+
 @media (max-width: 480px) {
 
   .message__title {

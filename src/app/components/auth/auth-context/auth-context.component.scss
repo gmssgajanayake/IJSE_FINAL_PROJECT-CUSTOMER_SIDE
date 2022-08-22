@@ -5,7 +5,7 @@ p {
 
 .banner {
   width: 100%;
-  min-height:50vh;
+  min-height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +34,7 @@ p {
   min-height: 75vh;
   display: flex;
   justify-content: center;
- // align-items: center;
+  // align-items: center;
   position: relative;
   background-color: #ffffff;
   background-size: cover;
@@ -44,7 +44,7 @@ p {
 .form .content {
   font-size: 1em;
   color: #fff;
- //text-align: center;
+  //text-align: center;
   width: 100vw;
   padding: 20px;
 }
@@ -59,7 +59,7 @@ p {
     color: #fff;
   }
 
-  .form .content{
+  .form .content {
     width: 100vw;
   }
 

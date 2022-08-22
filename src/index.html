@@ -35,7 +35,8 @@
     }
 </script>
 
-<script src="https://www.paypal.com/sdk/js?client-id=AZDEw6tjcDkpQwV2x0ALu9WIefdma9vh2Se5PWAxaeFWTX8vvTZO4VUWp9PCbLOBivr28FRpR0PP8rdo&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AZDEw6tjcDkpQwV2x0ALu9WIefdma9vh2Se5PWAxaeFWTX8vvTZO4VUWp9PCbLOBivr28FRpR0PP8rdo&enable-funding=venmo&currency=USD"
+        data-sdk-integration-source="button-factory"></script>
 <script>
     function initPayPalButton() {
         paypal.Buttons({
@@ -47,14 +48,24 @@
 
             },
 
-            createOrder: function(data, actions) {
+            createOrder: function (data, actions) {
                 return actions.order.create({
-                    purchase_units: [{"amount":{"currency_code":"USD","value":135,"breakdown":{"item_total":{"currency_code":"USD","value":100},"shipping":{"currency_code":"USD","value":23},"tax_total":{"currency_code":"USD","value":12}}}}]
+                    purchase_units: [{
+                        "amount": {
+                            "currency_code": "USD",
+                            "value": 135,
+                            "breakdown": {
+                                "item_total": {"currency_code": "USD", "value": 100},
+                                "shipping": {"currency_code": "USD", "value": 23},
+                                "tax_total": {"currency_code": "USD", "value": 12}
+                            }
+                        }
+                    }]
                 });
             },
 
-            onApprove: function(data, actions) {
-                return actions.order.capture().then(function(orderData) {
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (orderData) {
 
                     // Full available details
                     console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
@@ -69,14 +80,14 @@
                 });
             },
 
-            onError: function(err) {
+            onError: function (err) {
                 console.log(err);
             }
         }).render('#paypal-button-container');
     }
+
     initPayPalButton();
 </script>
-
 
 
 </body>
