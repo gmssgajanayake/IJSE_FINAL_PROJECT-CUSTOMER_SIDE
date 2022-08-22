@@ -17,6 +17,10 @@ export class DashboardComponent implements OnInit {
     public allOrderList: any = [];
     public id: string = '';
     public email: string = '';
+    page : number|undefined=0;
+    pageSize : number|undefined=10;
+
+
 
     customerForm = new FormGroup({
         name: new FormControl(null,

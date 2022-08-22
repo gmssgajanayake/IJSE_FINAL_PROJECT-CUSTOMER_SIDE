@@ -103,6 +103,70 @@ p {
 }
 
 
+.testimonials {
+  background: url("../../../assets/images/bg2.jpg");
+}
+
+.testimonials .title p,
+.testimonials .title h2 {
+  color: white;
+}
+
+.testimonials .content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 40px;
+}
+
+.testimonials .content .box {
+  width: 340px;
+  margin: 20px;
+  padding: 40px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.testimonials .content .box .imgBx {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testimonials .content .box .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonials .content .box .text {
+  text-align: center;
+}
+
+.testimonials .content .box .text p {
+  color: #666;
+  font-style: italic;
+}
+
+.testimonials .content .box .text h3 {
+  margin-top: 20px;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+
+
+
 @media (max-width: 991px) {
   section {
     padding: 20px;
