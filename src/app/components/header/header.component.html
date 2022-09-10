@@ -1,29 +1,30 @@
 <header>
-    <div class="menuToggle" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i><i class="fa-solid fa-xmark"></i>
-    </div>
-    <a routerLink="customer/home" routerLinkActive="active" class="logo">PRIMESPOT</a>
-    <div class="menuToggle"><a routerLink="customer/make-payment" routerLinkActive="active"> <span class="icon"
-                                                                                                   style="position: relative"><i
-            class="fa-solid fa-bag-shopping"></i></span>
-        <span class="counter">{{totalItem}}</span></a></div>
-    <ul class="navigation">
-        <li><a routerLink="customer/home" routerLinkActive="active" onclick="toggleMenu()"><h5
-                style="font-weight: normal">HOME</h5></a></li>
-        <li><a routerLink="customer/new-arrivals" routerLinkActive="active" onclick="toggleMenu()"><h5
-                style="font-weight: normal">NEW ARRIVALS</h5></a></li>
-        <li><a routerLink="customer/sizing" routerLinkActive="active" onclick="toggleMenu()"><h5
-                style="font-weight: normal">SIZING</h5></a></li>
-        <li><a routerLink="customer/about" routerLinkActive="active" onclick="toggleMenu()"><h5
-                style="font-weight: normal">ABOUT</h5></a></li>
-        <li><a routerLink="customer/login" routerLinkActive="active" onclick="toggleMenu()"><i
-                class="fa-solid fa-right-to-bracket"></i></a></li>
-        <li class="bag-icon">
+  <div class="menuToggle" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i><i class="fa-solid fa-xmark"></i>
+  </div>
+  <a routerLink="customer/home" routerLinkActive="active" class="logo">PRIMESPOT</a>
+  <div class="menuToggle"><a routerLink="customer/make-payment" routerLinkActive="active"> <span class="icon"
+                                                                                                 style="position: relative"><i
+    class="fa-solid fa-bag-shopping"></i></span>
+    <span class="counter">{{totalItem}}</span></a></div>
+  <ul class="navigation">
+    <li><a routerLink="customer/home" routerLinkActive="active" onclick="toggleMenu()"><h5
+      style="font-weight: normal">HOME</h5></a></li>
+    <li><a routerLink="customer/new-arrivals" routerLinkActive="active" onclick="toggleMenu()"><h5
+      style="font-weight: normal">NEW ARRIVALS</h5></a></li>
+    <li><a routerLink="customer/sizing" routerLinkActive="active" onclick="toggleMenu()"><h5
+      style="font-weight: normal">SIZING</h5></a></li>
+    <li><a routerLink="customer/about" routerLinkActive="active" onclick="toggleMenu()"><h5
+      style="font-weight: normal">ABOUT</h5></a></li>
+    <li><a routerLink="customer/login" routerLinkActive="active" onclick="toggleMenu()"><i class="fa-solid fa-user"></i></a>
+    </li>
+
+    <li class="bag-icon">
             <span class="icon" style="position: relative"><a routerLink="customer/make-payment"
                                                              routerLinkActive="active" onclick="toggleMenu()"><i
-                    class="fa-solid fa-bag-shopping"></i></a></span>
-            <span class="counter">{{totalItem}}</span>
-        </li>
-        <li><a><i class="fa-solid fa-heart"></i></a></li>
-    </ul>
+              class="fa-solid fa-bag-shopping"></i></a></span>
+      <span class="counter">{{totalItem}}</span>
+    </li>
+    <li><a><i class="fa-solid fa-heart"></i></a></li>
+  </ul>
 </header>
 
